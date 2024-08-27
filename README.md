@@ -21,6 +21,7 @@ This project is at the very start of its development.
 - Expansion of Person/Being class to include character stats, levelling up, held/worn items, etc. This would be a part of a larger project/library that could include RegionPy.
 
 ## Use cases
+- Navigable areas within traditional visual novels.
 - Dungeon crawlers, mazes, etc.
 - Text adventures.
 - Side-view instead of top down, e.g. moving through different rooms and floors of a building, showing a cross-section.
