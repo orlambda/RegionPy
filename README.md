@@ -10,6 +10,7 @@ This project is at the very start of its development.
 - A map image that can be shown and hidden with the "M" key during certain stages of the game (e.g. only within a particular region or if the player has found a map).
 
 ### Possible future features:
+- Allow adding to a region instead of overwriting the file
 - Player/Person direction. Initially, XY will be the horizontal axes, as looking top-down or at a map. Z will likely be used for different floors/levels. As such, direction will be limited to the XY axes. The design will be such that this is easily changed according to usage. Each cell/direction combination may or may not need its own RenPy label.
 - Generate default background images for each location (e.g. Room_X1_Y5_Z1.jpg).
 - Allow multiple maps dependent on current region.
