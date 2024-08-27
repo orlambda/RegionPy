@@ -72,7 +72,7 @@ def get_region_info(args):
     region_info = Region_info()
 
     # Get area / output filename
-    region_info.area = get_area(sys.argv[1])    
+    region_info.area = get_area(args[1])    
     # Get x dimensions
     x = args[2]
     region_info.x_min, region_info.x_max = get_dimensions_range(x)
@@ -80,7 +80,10 @@ def get_region_info(args):
     y = args[3]
     region_info.y_min, region_info.y_max = get_dimensions_range(y)
     # Get z dimensions for 3D
-    z = args[4]
+    if (len(args) == 4):
+        z = "0"
+    else:
+        z = args[4]
     region_info.z_min, region_info.z_max = get_dimensions_range(z)
 
     return region_info
