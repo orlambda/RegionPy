@@ -1,7 +1,7 @@
 import sys
 import os
 
-# Creates a region
+# Create a region
 
 # Requires grid_label_template.rpy
 # Todo: allow comments in template file that aren't included, or are prepended (once only)
@@ -12,7 +12,7 @@ necessary information:
 sys.argv[1]: Filename (name of area)
 sys.argv[2]: x min-max
 sys.argv[3]: y min-max
-sys.argv[4]: z min-max (3D only)
+sys.argv[4]: z min-max
 
 """
 
@@ -86,6 +86,8 @@ def get_region_info(args):
     return region_info
 
 def get_area(area):
+    MAX_NAME_LENGTH = 54
+
     if area.find(".") != -1:
         sys.exit("Area/filename must not include '.' or '.rpy' extension")        
     if area.find("-") != -1:
@@ -93,10 +95,11 @@ def get_area(area):
     area = area.strip()
     if len(area) == 0:
         sys.exit("Needs area/filename")
-    if len(area) > 54:
+    if len(area) > MAX_NAME_LENGTH:
         sys.exit("Area/filename too long")
     if os.path.isfile(f"{area}.rpy"):
         while True:
+            # TODO: Add option to add to existing region
             overwrite = input("File already exists. Overwrite? (y/n) ").strip().lower()
             if overwrite == "y":
                 return area
