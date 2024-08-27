@@ -13,6 +13,7 @@ This project is at the very start of its development.
 - Allow adding to a region instead of overwriting the file
 - Player/Person direction. Initially, XY will be the horizontal axes, as looking top-down or at a map. Z will likely be used for different floors/levels. As such, direction will be limited to the XY axes. The design will be such that this is easily changed according to usage. Each cell/direction combination may or may not need its own RenPy label.
 - Generate default background images for each location (e.g. Room_X1_Y5_Z1.jpg).
+- Add robust error checking for valid RenPy label names.
 - Allow multiple maps dependent on current region.
 - Allow movement using keyboard (possibly using ESDF).
 - Allow open/closed status of adjacent cells to be stored/amended, e.g. finding a key to open a door, using a directed graph in Python.
