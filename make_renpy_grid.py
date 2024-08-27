@@ -1,8 +1,7 @@
 import sys
 import os
 
-
-# Creates a grid 
+# Creates a region
 
 # Requires grid_label_template.rpy
 # Todo: allow comments in template file that aren't included, or are prepended (once only)
@@ -11,51 +10,28 @@ import os
 
 necessary information:
 sys.argv[1]: Filename (name of area)
-sys.argv[2]: 2D or 3D
-sys.argv[3]: x min-max
-sys.argv[4]: y min-max
-sys.argv[5]: y min-max
-sys.argv[6]: z min-max (3D only)
+sys.argv[2]: x min-max
+sys.argv[3]: y min-max
+sys.argv[4]: z min-max (3D only)
+
 """
 
 
+class Region_info():
+    def __init__(self):
+        self.name = ""
+        self.x_min = 0
+        self.x_max = 0
+        self.y_min = 0
+        self.y_max = 0
+        self.z_min = 0
+        self.z_max = 0
+
 def main():
 
-    min_dimension = 0
-    max_dimension = 200
+    region_info = get_region_info(sys.argv)
 
-    # Check number of arguments
-    if len(sys.argv) < 5:
-        sys.exit("Too few command-line arguments\n")
-    if len(sys.argv) > 6:
-        sys.exit("Too many command-line arguments\n")
-
-    # Check 2D or 3D
-    dimensions = get_number_of_dimensions(sys.argv[2])
-
-    # Check number of arguments for 2D or 3D
-    if dimensions == 2 and len(sys.argv) != 5:
-        sys.exit("2D requires x and y\n")
-    if dimensions == 3 and len(sys.argv) != 6:
-        sys.exit("3D requires x, y, and z\n")
-    
-    # Get x dimensions    
-    x = sys.argv[3]
-    x_min, x_max = get_dimensions_range(x, min_dimension, max_dimension)
-    # Get y dimensions
-    y = sys.argv[4]
-    y_min, y_max = get_dimensions_range(y, min_dimension, max_dimension)
-    # Get z dimensions for 3D
-    if dimensions == 3:
-        z = sys.argv[5]
-        z_min, z_max = get_dimensions_range(z, min_dimension, max_dimension)
-    else:
-        z_min = 0
-        z_max = 0
-
-    # Get area / output filename
-    area = get_area(sys.argv[1])
-    filename = f"{area}.rpy"
+    filename = f"{region_info.area}.rpy"
 
     # Open output file
     try:
@@ -74,13 +50,10 @@ def main():
     template = f2.read()
     header = ""
     f.write(header)
-    for k in range(z_min, z_max+1):
-        for j in range(y_min, y_max+1):
-            for i in range(x_min, x_max+1):
-                if dimensions == 2:
-                    label = f"{area}_{i}_{j}"
-                else:
-                    label = f"{area}_{i}_{j}_{k}"
+    for k in range(region_info.z_min, region_info.z_max+1):
+        for j in range(region_info.y_min, region_info.y_max+1):
+            for i in range(region_info.x_min, region_info.x_max+1):
+                label = f"{region_info.area}_{i}_{j}_{k}"
                 f.write(f"label {label}:")
                 f.write("\n\n")
                 f.write(template)
@@ -88,13 +61,29 @@ def main():
     f.close()
     f2.close()
 
-def get_number_of_dimensions(dimensions):
-    if dimensions in ["2", "2D", "2d"]:
-        return 2
-    elif dimensions in ["3", "3D", "3d"]:
-        return 3
-    else:
-        sys.exit("Must be 2D or 3D") 
+def get_region_info(args):
+
+    # Check number of arguments
+    if len(args) < 5:
+        sys.exit("Too few command-line arguments\n")
+    if len(args) > 5:
+        sys.exit("Too many command-line arguments\n")
+
+    region_info = Region_info()
+
+    # Get area / output filename
+    region_info.area = get_area(sys.argv[1])    
+    # Get x dimensions
+    x = sys.argv[2]
+    region_info.x_min, region_info.x_max = get_dimensions_range(x)
+    # Get y dimensions
+    y = sys.argv[3]
+    region_info.y_min, region_info.y_max = get_dimensions_range(y)
+    # Get z dimensions for 3D
+    z = sys.argv[4]
+    region_info.z_min, region_info.z_max = get_dimensions_range(z)
+
+    return region_info
 
 def get_area(area):
     if area.find(".") != -1:
@@ -115,23 +104,31 @@ def get_area(area):
                 sys.exit("Aborted\n")
     return area
 
-def get_dimensions_range(dimensions, min_dimension, max_dimension):
+def get_dimensions_range(dimensions):
+    min_dimension = 0
+    max_dimension = 200
+
     dimensions = dimensions.split("-")
-    if len(dimensions) != 2:
-        sys.exit("Dimensions format: min-max")
+
+    if len(dimensions) == 1:
+        dimensions = ["0", dimensions[0]]
+    elif len(dimensions) != 2:
+        sys.exit("Dimensions format: max or min-max")
+    
     try:
         min = int(dimensions[0])
         max = int(dimensions[1])
     except ValueError:
-        sys.exit("Dimensions format: min-max")
+        sys.exit("Dimensions format: max or min-max")
+
     if min < min_dimension:
         sys.exit(f"Min dimension is {min_dimension}")
     if max > max_dimension:
         sys.exit(f"Max dimension is {max_dimension}")
     if min > max:
-        sys.exit("Dimensions format: min-max")
-    return min, max
+        sys.exit("Dimensions format: max or min-max")
 
+    return min, max
 
 if __name__ == "__main__":
     main()
