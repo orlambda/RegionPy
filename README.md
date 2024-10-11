@@ -1,15 +1,24 @@
 # RegionPy
-Project to allow quick creation of navigable 2D and 3D grid-based regions for use in games made with RenPy. These regions can be added to a RenPy script so the entire game doesn't need to be grid-based. Information on how to use will be added, tailored to both experienced programmers and beginners.
+## Description
+Project to allow quick creation of navigable 2D and 3D grid-based regions for use in games made with RenPy. Regions can be added to any RenPy script, so the rest of the game does not need to be grid-based or use regions in any way.
+
+### Advantages
+- Generating a RenPy script for a region saves time writing the many labels (cells).
+- Player "movement" saves time linking the cells within a region.
+- Using Python for player location and movement allows tidy, robust code.
+
+### Current state
+Information on how to use RegionPy will be added, tailored to both experienced programmers and beginners.
 
 This project is at the very start of its development. It is currently usable to create a grid and allow "movement" but features will be added, and I expect to completely change much of the existing code, including renaming functions.
 
 ## Scope
-### Features:
+### Features
 - A Python program which generates a RenPy script to represent a 2D or 3D region with a given name and given dimensions, with a RenPy label correspending to each cell of the region's grid (e.g. "Room_X1_Y5_Z1").
 - A Person/Being Python class (name TBC) for both PCs and NPCs which stores that person's location, and allows them to move, jumping them to the relevant scene according to location.
 - A map image that can be shown and hidden with the "M" key during certain stages of the game (e.g. only within a particular region or if the player has found a map).
 
-### Possible future features:
+### Possible future features
 - Allow adding to a region instead of overwriting the file
 - Player/Person direction. Initially, XY will be the horizontal axes, as looking top-down or at a map. Z will likely be used for different floors/levels. As such, direction will be limited to the XY axes. The design will be such that this is easily changed according to usage. Each cell/direction combination may or may not need its own RenPy label.
 - Generate default background images for each location (e.g. Room_X1_Y5_Z1.jpg).
