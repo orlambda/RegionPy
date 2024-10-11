@@ -1,7 +1,7 @@
 # RegionPy
-Project to allow quick creation of navigable 2D and 3D grid-based regions for use in games made with RenPy. These regions can be added to a RenPy script so the entire game doesn't need to be grid-based.
+Project to allow quick creation of navigable 2D and 3D grid-based regions for use in games made with RenPy. These regions can be added to a RenPy script so the entire game doesn't need to be grid-based. Information on how to use will be added, tailored to both experienced programmers and beginners.
 
-This project is at the very start of its development.
+This project is at the very start of its development. It is currently usable to create a grid and allow "movement" but features will be added, and I expect to completely change much of the existing code, including renaming functions.
 
 ## Scope
 ### Features:
