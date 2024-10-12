@@ -65,9 +65,9 @@ def get_region_info(args):
 
     # Check number of arguments
     if len(args) < 4:
-        sys.exit("Too few command-line arguments\n")
+        sys.exit("Too few command-line arguments. Usage: python RegionPy.py areaName xMax yMax [zMax]\n")
     if len(args) > 5:
-        sys.exit("Too many command-line arguments\n")
+        sys.exit("Too many command-line arguments. Usage: python RegionPy.py areaName xMax yMax [zMax]\n")
 
     region_info = Region_info()
 
