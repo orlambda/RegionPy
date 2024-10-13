@@ -3,8 +3,9 @@ import os
 
 # Create a region
 
-# Requires grid_label_template.rpy
-# Todo: allow comments in template file that aren't included, or are prepended (once only)
+# Requires cell_label_template.rpy
+LABEL_TEMPLATE_FILE = "cell_label_template.rpy"
+
 
 """
 
@@ -33,6 +34,13 @@ def main():
 
     filename = f"{region_info.area}.rpy"
 
+    # # Open label template
+    try:
+        f2 = open(LABEL_TEMPLATE_FILE, "r")
+    except:
+        sys.exit("Could not open " + LABEL_TEMPLATE_FILE)
+    template = f2.read()
+
     # Open output file
     try:
         f = open(filename, "w")
@@ -40,14 +48,8 @@ def main():
         try:
             f = open(filename, "x")
         except OSError:
-            sys.exit("Could not create file")
+            sys.exit("Could not create file")   
 
-    # Open label template
-    try:
-        f2 = open("grid_label_template.rpy", "r")
-    except OSError:
-        sys.exit("Could not open grid_label_template.rpy")
-    template = f2.read()
     header = ""
     f.write(header)
     for k in range(region_info.z_min, region_info.z_max+1):
