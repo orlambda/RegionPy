@@ -1,6 +1,4 @@
-﻿# Comments use third-person for narrative and imperative for code
-
-# Jump to the debugging label and control other program behaviour
+﻿# Jump to the debugging label and control other program behaviour
 define debugging = False
 
 # To detect errors saving/assigning player name
