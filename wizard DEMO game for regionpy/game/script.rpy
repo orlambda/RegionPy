@@ -43,7 +43,7 @@ label game_menu:
 
 # Customized keyboard input (for function, add arguments as an argument e.g. Function(toggle_map, arg1="maybe a string") )
 screen keymapscreen():
-    zorder -1
+    zorder 10
     key "m" action Function(toggle_map)
 
 label map_label:
