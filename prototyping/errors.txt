@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 8: invalid syntax
-    def jumpToNext:
-                   ^
+File "game/Location.rpy", line 42: f-string: unmatched '('
+            destination = self.region + "_" + f"{target.get("x")}" + "_" + f"{target["y"]}_{target["z"]}"
+                                                              ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Oct 12 18:48:17 2024
+Mon Oct 14 01:48:59 2024
