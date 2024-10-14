@@ -1,11 +1,10 @@
+# Create a region
+
 import sys
 import os
 
-# Create a region
-
 # Requires cell_label_template.rpy
 LABEL_TEMPLATE_FILE = "cell_label_template.rpy"
-
 
 """
 
