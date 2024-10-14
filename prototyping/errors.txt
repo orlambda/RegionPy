@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Location.rpy", line 42: f-string: unmatched '('
-            destination = self.region + "_" + f"{target.get("x")}" + "_" + f"{target["y"]}_{target["z"]}"
-                                                              ^
+File "game/script.rpy", line 48: expected statement.
+    config.allow_skipping = False
+                          ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Oct 14 01:48:59 2024
+Mon Oct 14 23:40:07 2024

@@ -1,8 +1,9 @@
 label test_area_0_0_0:
 
-    show screen block
 
-    "0 0 0"
+    $ canMove = False
+
+    "0 0 0 cannot move yet!"
 
     "This text should be skippable"
 
@@ -10,7 +11,12 @@ label test_area_0_0_0:
 
     "Skippy skip skip skip..."
 
-    "And that ends the skipping!"
+    $ canMove = True
+
+    show screen block
+
+    "And that ends the skipping! Can move now"
+
 
 label test_area_1_0_0:
 
@@ -20,9 +26,15 @@ label test_area_1_0_0:
 
 label test_area_2_0_0:
 
+    $ canMove = False
+
+    "2 0 0 cannot move yet!"
+
     show screen block
 
-    "2 0 0 "
+    $ canMove = True
+
+    "2 0 0 can move now"
 
 
 

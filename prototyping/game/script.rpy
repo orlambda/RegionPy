@@ -2,6 +2,8 @@
 
 # Start the game
 
+# default config.allow_skipping = True
+default canMove = False
 
 init python:
 
@@ -11,6 +13,8 @@ init python:
 
 
     player = Being()
+    # 0 ID means this is the player
+    player.ID = 0
     player.location.region = "test_area"
     player.location.x = 0
     player.location.y = 0
@@ -40,6 +44,10 @@ label start:
 label next:
 
     "Ok here we go!"
+
+    # $ config.allow_skipping = False
+
+    $ canMove = True
 
     jump test_area_0_0_0
 
