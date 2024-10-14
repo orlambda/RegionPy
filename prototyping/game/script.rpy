@@ -2,10 +2,10 @@
 
 # Start the game
 
-# default config.allow_skipping = True
-default canMove = False
+$ config.allow_skipping = True
 
 init python:
+    
 
     def jumpToNext():
         renpy.hide_screen("block")
@@ -31,9 +31,14 @@ screen keymapscreen():
 
 screen block():
     zorder -2
+    #  A modal screen prevents the user from interacting with displayables below it,
+    # except for the default keymap.
+    # This is evaluated once, when the game starts.
     modal True
 
 label start:
+
+    $ playerCanMove = False
 
     show screen keymapscreen
 
@@ -45,9 +50,9 @@ label next:
 
     "Ok here we go!"
 
-    # $ config.allow_skipping = False
+    $ config.allow_skipping = False
 
-    $ canMove = True
+    $ playerCanMove = True
 
     jump test_area_0_0_0
 

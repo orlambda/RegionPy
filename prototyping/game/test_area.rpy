@@ -1,9 +1,11 @@
 label test_area_0_0_0:
 
 
-    $ canMove = False
+    # $ canMove = False
 
-    $ config.allow_skipping = True
+    # $ config.allow_skipping = True
+
+    $ preventPlayerMovement()
 
     "0 0 0 cannot move yet!"
 
@@ -13,174 +15,115 @@ label test_area_0_0_0:
 
     "Skippy skip skip skip..."
 
-    $ canMove = True
-
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "And that ends the skipping! Can move now"
+
+label nergrego23224:
+
+    "ERROR!got here from 0 0 0 "
 
 
 label test_area_1_0_0:
 
-    show screen block
+    $ allowPlayerMovement()
 
-    $ config.allow_skipping = False
+    # show screen block
+
+    # $ config.allow_skipping = False
 
     "1 0 0"
 
+label no232ggg24:
+
+    "ERROR!got here from 1 0 0"
+
+
 label test_area_2_0_0:
 
-    $ canMove = False
+    $ preventPlayerMovement()
+    
+    # $ canMove = False
 
-    $ config.allow_skipping = True
+    # $ config.allow_skipping = True
 
     "2 0 0 cannot move yet! Can skip text!"
 
     "1 sec!"
 
-    show screen block
+    # show screen block
 
-    $ canMove = True
+    # $ canMove = True
 
-    $ config.allow_skipping = False
+    # $ config.allow_skipping = False
+
+    $ allowPlayerMovement()
 
     "2 0 0 can move now"
 
+label no23rffrff224:
+
+    "ERROR!got here from 2 0 0 "
 
 
 label test_area_0_1_0:
 
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "0 1 0 "
 
+label no2322mn4:
+
+    "ERROR!got here from 0 1 0 "
 
 
 label test_area_1_1_0:
 
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "1 1 0"
 
+label no2g3224:
+
+    "ERROR!got here from 1 1 0 "
 
 
 label test_area_2_1_0:
 
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "2 1 0"
 
+label no23224:
 
+    "ERROR!got here from 2 1 0 "
 
 label test_area_0_2_0:
 
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "0 2 0 "
 
+label no2334:
 
+    "ERROR!got here from 0 2 0 "
 
 label test_area_1_2_0:
 
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "1 2 0"
 
+label no234:
 
+    "ERROR!got here from 1 2 0 "
 
 label test_area_2_2_0:
 
-    show screen block
-
-    $ config.allow_skipping = False
+    $ allowPlayerMovement()
 
     "2 2 0"
 
+label no:
 
-
-label test_area_0_0_1:
-
-    show screen block
-
-    $ config.allow_skipping = False
-
-    "0 0 1"
-
-
-
-label test_area_1_0_1:
-
-    show screen block
-
-    $ config.allow_skipping = False
-
-    "1 0 1"
-
-
-
-label test_area_2_0_1:
-
-    show screen block
-
-    $ config.allow_skipping = False
-
-    "2 0 1"
-
-
-
-label test_area_0_1_1:
-
-    show screen block
-
-    $ config.allow_skipping = False
-
-    "0 1 1 "
-
-
-
-label test_area_1_1_1:
-
-    show screen block
-
-    $ config.allow_skipping = False
-
-    "1 1 1 "
-
-
-
-label test_area_2_1_1:
-
-    show screen block
-
-    $ config.allow_skipping = False
-
-    "2 1 1"
-
-
-label test_area_0_2_1:
-    show screen block
-
-    $ config.allow_skipping = False
-    "0 2 1"
-
-
-label test_area_1_2_1:
-    show screen block
-
-    $ config.allow_skipping = False
-    "1 2 1"
-
-
-
+    "ERROR! got here from 2 2 0"
