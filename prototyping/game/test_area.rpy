@@ -4,6 +4,14 @@ label test_area_0_0_0:
 
     "0 0 0"
 
+    "This text should be skippable"
+
+    "Skip skip skip!"
+
+    "Skippy skip skip skip..."
+
+    "And that ends the skipping!"
+
 label test_area_1_0_0:
 
     show screen block

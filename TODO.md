@@ -10,3 +10,14 @@ Make prototype to try using keyboard to navigate regions
 - Add start and end points
 - Add an item that must be found
 - Add a map
+
+- Decide WASD alternative
+    Cannot use these keys:
+    a
+    s
+    d
+    f
+    h
+    v
+    return
+    space

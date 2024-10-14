@@ -1,13 +1,13 @@
 init python:
     def movePlayerUp():
         renpy.hide_screen("block")
-        player.location.move("UP")    
+        player.move("UP")    
     def movePlayerLeft():
         renpy.hide_screen("block")
-        player.location.move("LEFT")
+        player.move("LEFT")
     def movePlayerDown():
         renpy.hide_screen("block")
-        player.location.move("DOWN")
+        player.move("DOWN")
     def movePlayerRight():
         renpy.hide_screen("block")
-        player.location.move("RIGHT")
+        player.move("RIGHT")

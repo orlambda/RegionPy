@@ -9,3 +9,35 @@ init python:
         def __init__(self):
             self.ID = None
             self.location = Location()
+
+        def move(self, direction):
+            # TODO: refactor
+                # self.location to target.
+                # process target and direction in a separate function.
+                # copy target to self.location
+            targetX = self.location.x
+            targetY = self.location.y
+            targetZ = self.location.z
+            if direction == "UP":
+                targetY -= 1
+            elif direction == "RIGHT":
+                targetX += 1       
+            elif direction == "DOWN":
+                targetY += 1  
+            elif direction == "LEFT":
+                targetX -= 1   
+            elif direction == "FORWARD":
+                targetZ -= 1
+            elif direction == "BACK":
+                targetZ += 1
+            else:
+                a = 5/0
+            destination = f"{self.location.region}_{targetX}_{targetY}_{targetZ}"
+            # Ensure cell exists in renpy script before updating location
+            if renpy.has_label(destination):
+                self.location.x = targetX
+                self.location.y = targetY
+                self.location.z = targetZ
+                if self.ID is 0:
+                    renpy.jump(destination)
+
