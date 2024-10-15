@@ -22,7 +22,7 @@ init python:
 
 # Jump to label "next" when "m" key is pressed
 screen keymapscreen():
-    zorder -1
+    zorder 2
     key "m" action Function(jumpToNext)
     key "i" action Function(movePlayerUp)
     key "j" action Function(movePlayerLeft)
@@ -30,7 +30,7 @@ screen keymapscreen():
     key "l" action Function(movePlayerRight)
 
 screen block():
-    zorder -2
+    zorder 1
     #  A modal screen prevents the user from interacting with displayables below it,
     # except for the default keymap.
     # This is evaluated once, when the game starts.
@@ -51,8 +51,6 @@ label next:
     "Ok here we go!"
 
     $ config.allow_skipping = False
-
-    $ playerCanMove = True
 
     jump test_area_0_0_0
 

@@ -1,26 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 7, in script
-    define preferences.afm_enable = False
-  File "renpy/common/000namespaces.rpy", line 84, in set
-    raise Exception("The define statement can not be used with the preferences namespace.")
-Exception: The define statement can not be used with the preferences namespace.
+  File "game/test_area.rpy", line 9, in script
+    $ allowPlayerMovement()
+  File "game/test_area.rpy", line 9, in <module>
+    $ allowPlayerMovement()
+  File "game/playerMovement.rpy", line 4, in allowPlayerMovement
+    renpy.call_in_new_context("block")
+ScriptError: could not find label 'block'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 7, in script
-    define preferences.afm_enable = False
-  File "/Applications/renpy-8.1.3-sdk/renpy/ast.py", line 2222, in execute
-    self.set()
-  File "/Applications/renpy-8.1.3-sdk/renpy/ast.py", line 2240, in set
-    ns.set(self.varname, value)
-  File "renpy/common/000namespaces.rpy", line 84, in set
-    raise Exception("The define statement can not be used with the preferences namespace.")
-Exception: The define statement can not be used with the preferences namespace.
+  File "game/test_area.rpy", line 9, in script
+    $ allowPlayerMovement()
+  File "/Applications/renpy-8.1.3-sdk/renpy/ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Applications/renpy-8.1.3-sdk/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/test_area.rpy", line 9, in <module>
+    $ allowPlayerMovement()
+  File "game/playerMovement.rpy", line 4, in allowPlayerMovement
+    renpy.call_in_new_context("block")
+  File "/Applications/renpy-8.1.3-sdk/renpy/game.py", line 358, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "/Applications/renpy-8.1.3-sdk/renpy/execution.py", line 955, in run_context
+    context.run()
+  File "/Applications/renpy-8.1.3-sdk/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'block'.
 
 macOS-14.4.1-arm64-arm-64bit arm64
 Ren'Py 8.2.3.24061702
 prototyping 1.0
-Tue Oct 15 00:39:36 2024
+Tue Oct 15 02:18:20 2024

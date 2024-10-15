@@ -1,13 +1,11 @@
-init 1 python:
+init python:
     def allowPlayerMovement():
-        if not renpy.get_screen("block"):
-            renpy.show_screen("block")
+        # if not renpy.get_screen("block"):
+        #     renpy.show_screen("block")
         global playerCanMove
         playerCanMove = True
         config.allow_skipping = False         
         
-
-
     def preventPlayerMovement():
         global playerCanMove
         if playerCanMove:
