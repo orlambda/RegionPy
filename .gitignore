@@ -4,6 +4,8 @@
 ### Renpy ###
 # Don't track content of these folders #
 ########################################
+prototyping/game/cache/
+prototyping/game/saves/
 cache/
 saves/
 
