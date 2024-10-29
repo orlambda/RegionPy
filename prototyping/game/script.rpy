@@ -6,12 +6,6 @@ $ config.allow_skipping = True
 
 init python:
     
-
-    def jumpToNext():
-        renpy.hide_screen("block")
-        renpy.jump("next")
-
-
     player = Being()
     # 0 ID means this is the player
     player.ID = 0
@@ -21,9 +15,8 @@ init python:
     player.location.z = 0
 
 # Jump to label "next" when "m" key is pressed
-screen keymapscreen():
+screen movementKepMapScreen():
     zorder 2
-    key "m" action Function(jumpToNext)
     key "i" action Function(movePlayerUp)
     key "j" action Function(movePlayerLeft)
     key "k" action Function(movePlayerDown)
@@ -37,21 +30,6 @@ screen block():
     modal True
 
 label start:
-
-    $ playerCanMove = False
-
-    show screen keymapscreen
-
-    show screen block
     
-    "Press M when ready to enter test_area!"
-
-label next:
-
-    "Ok here we go!"
-
-    $ config.allow_skipping = False
-
-    jump test_area_0_0_0
-
-    return
+    # movementTest.rpy
+    jump movementTest

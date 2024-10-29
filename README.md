@@ -12,6 +12,11 @@ This project is at the very start of its development and is in an experimental s
 - Player "movement" saves time linking the cells within a region.
 - Using Python for player location and movement allows tidy, robust code.
 
+## Repo structure
+- /main contains the python file which creates a region, and a template for the content of each label within that region
+- /prototyping contains a RenPy game used for testing. this contains multiple prototypes. change the start label of script.py to use a different prototype. this avoids having a separate RenPy game folder for each prototype.
+- /wizard\ DEMO\ game\ for\ regionpy contains the first prototype game I made. it is kept here for reference.
+
 ## Scope
 ### Features
 - A Python program which generates a RenPy script to represent a 2D or 3D region with a given name and given dimensions, with a RenPy label correspending to each cell of the region's grid (e.g. "Room_X1_Y5_Z1").
