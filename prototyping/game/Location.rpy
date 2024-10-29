@@ -1,9 +1,6 @@
 # Python class for location
 
 init python:
-
-    import os
-    import sys
     
     class Location:
         def __init__(self):

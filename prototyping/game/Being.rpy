@@ -30,8 +30,8 @@ init python:
                 targetZ -= 1
             elif direction == "BACK":
                 targetZ += 1
-            else:
-                a = 5/0
+            elif direction != "SAME":
+                raise Exception("Invalid direction for Being.move()")
             destination = f"{self.location.region}_{targetX}_{targetY}_{targetZ}"
             # Ensure cell exists in renpy script before updating location
             if renpy.has_label(destination):

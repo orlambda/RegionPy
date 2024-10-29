@@ -1,4 +1,7 @@
 init python:
+
+    playerCanMove = False
+    
     def allowPlayerMovement():
         # if not renpy.get_screen("block"):
         #     renpy.show_screen("block")
