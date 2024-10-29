@@ -4,16 +4,6 @@
 
 $ config.allow_skipping = True
 
-init python:
-    
-    player = Being()
-    # 0 ID means this is the player
-    player.ID = 0
-    player.location.region = "test_area"
-    player.location.x = 0
-    player.location.y = 0
-    player.location.z = 0
-
 # Jump to label "next" when "m" key is pressed
 screen movementKepMapScreen():
     zorder 2
