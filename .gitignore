@@ -30,4 +30,7 @@ errors.txt
 traceback.txt
 files.txt
 
+# Affinity publisher files
+*.afpub
+
 # End of https://www.toptal.com/developers/gitignore/api/renpy
