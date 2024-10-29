@@ -1,8 +1,8 @@
 Make prototype to try using keyboard to navigate regions
-- Simplify movementTestRegion script
+- Create background images for each cell
+- Change code to show background image for current cell
 - See if menu can have different styles (for movement vs dialogue)
 - Remove main menu for testing
-- Create background images for each cell
 - Add start and end points
 - Add an item that must be found
 - Add a map
