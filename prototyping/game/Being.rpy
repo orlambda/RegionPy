@@ -40,6 +40,7 @@ init python:
                 self.location.z = targetZ
                 if self.ID is 0:
                     renpy.scene()
-                    renpy.show("map")
+                    cellBackground = f"{self.location.region}_{self.location.x}_{self.location.y}_{self.location.z}".lower()
+                    renpy.show(cellBackground)
                     renpy.jump(destination)
 

@@ -1,7 +1,6 @@
 Make prototype to try using keyboard to navigate regions
-- Create background images for each cell
-- Change code to show background image for current cell
 - See if menu can have different styles (for movement vs dialogue)
+- Make unobtrusive player movement menu
 - Remove main menu for testing
 - Add start and end points
 - Add an item that must be found
