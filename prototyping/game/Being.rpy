@@ -39,5 +39,7 @@ init python:
                 self.location.y = targetY
                 self.location.z = targetZ
                 if self.ID is 0:
+                    renpy.scene()
+                    renpy.show("map")
                     renpy.jump(destination)
 
