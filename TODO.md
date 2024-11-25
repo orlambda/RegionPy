@@ -7,7 +7,7 @@ Make prototype to try using keyboard to navigate regions
 - Add a map
 - Make a map function that shows map for the current region
 
-- For future key
+- For future keymaps
     Cannot use these keys:
     a
     s
