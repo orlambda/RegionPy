@@ -12,7 +12,7 @@
     - Write function that outputs label name based on x y z direction
     - Add x-y-z-direction labelname function to:
         - RegionPy.py
-        -  move() in Being.rpy
+        -  move() in Unit.rpy
         - set() in Location.rpy
     - Change cell background image name to include direction
 

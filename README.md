@@ -11,7 +11,7 @@ Project to allow quick creation of navigable 2D and 3D grid-based regions for us
 ### Scope
 #### Current features
 - A Python program which generates a RenPy script to represent a 2D or 3D region with a given name and given dimensions, with a RenPy label correspending to each cell of the region's grid (e.g. "Room_X1_Y5_Z1").
-- A Person/Being Python class (name TBC) for both PCs and NPCs which stores that person's location, and allows them to move, jumping them to the relevant scene according to location.
+- A Unit Python class for both PCs and NPCs which stores the unit's location, and allows them to move, jumping them to the relevant scene according to location.
 - A map image that can be shown and hidden with the "M" key during certain stages of the game (e.g. only within a particular region or if the player has found a map).
 - Allow movement between cells using IJKL keys.
 
@@ -23,7 +23,7 @@ Project to allow quick creation of navigable 2D and 3D grid-based regions for us
 - Allow multiple maps dependent on current region.
 - Allow open/closed status of adjacent cells to be stored/amended, e.g. finding a key to open a door, using a directed graph in Python.
 - Generate a default map image or other visual representation (may not be suitable for use in game but may be useful for developers to keep track of their regions).
-- Expansion of Person/Being class to include character stats, levelling up, held/worn items, etc. This would be a part of a larger project/library that could include RegionPy.
+- Expansion of Unit class to include character stats, levelling up, held/worn items, etc. This would be a part of a larger project/library that could include RegionPy.
 
 ### Use cases
 - Navigable areas within traditional visual novels.

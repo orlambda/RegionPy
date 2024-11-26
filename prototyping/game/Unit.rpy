@@ -1,10 +1,10 @@
-# Python class for beings
-# Used to track and change a being's location
+# Python class for units
+# Used to track and change a unit's location
 # ID of 0 is the player
 
 init python:
 
-    class Being():
+    class Unit():
         # Can refactor x, y, z into a Coordinates class
         def __init__(self):
             self.ID = None
@@ -31,7 +31,7 @@ init python:
             elif direction == "BACK":
                 targetZ += 1
             elif direction != "SAME":
-                raise Exception("Invalid direction for Being.move()")
+                raise Exception("Invalid direction for Unit.move()")
             destination = f"{self.location.region}_{targetX}_{targetY}_{targetZ}"
             # Ensure cell exists in renpy script before updating location
             if renpy.has_label(destination):
