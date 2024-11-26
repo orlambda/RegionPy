@@ -9,6 +9,7 @@ init python:
         def __init__(self):
             self.ID = None
             self.location = Location()
+            self.direction = None
 
         def move(self, direction):
             # TODO: refactor
