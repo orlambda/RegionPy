@@ -1,6 +1,3 @@
-- Rename Being to unit
-    - Python
-    - README
 - Allow directions and turning
     - Add direction variable to Unit
     - Add turn() to Unit
