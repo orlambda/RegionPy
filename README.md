@@ -1,7 +1,7 @@
 # RegionPy
 ## Project overview
 ### Description
-Project to allow quick creation of navigable 2D and 3D grid-based regions for use in games made with RenPy. Regions can be added to any RenPy script, so the rest of the game does not need to be grid-based or use regions in any way. 
+Project to allow quick creation of navigable 2D and 3D grid-based regions with keyboard movement for use in games made with RenPy. Regions can be added to any RenPy script, so the rest of the game does not need to use these regions in any way. 
 
 ### Advantages
 - Generating a RenPy script for a region saves time writing the many labels (cells).
